@@ -3,9 +3,12 @@ using System.Collections;
 
 public class Camera : MonoBehaviour
 {
+    public Transform player;
 
+    private Transform myTransform;
     void Start ()
     {
+        myTransform = this.transform;
     }
 
     void Update()
@@ -14,5 +17,7 @@ public class Camera : MonoBehaviour
 
     void LateUpdate()
     {
+        myTransform.rotation = player.rotation;
+        myTransform.position = player.position;
     }
 }

@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 
         controller.Move(moveDirection * Time.deltaTime);
         graphics.transform.position = myTransform.position;
-
+        cameraPivot = myTransform;
     }
 
     public float lookSpeed;
@@ -76,7 +76,11 @@ public class Player : MonoBehaviour
             myTransform.eulerAngles.y + xDistance,
             myTransform.eulerAngles.z);
 
+        Debug.Log(target);
+
         myTransform.rotation = target;
+
+        Debug.Log(myTransform.rotation);
     }
 
     public float turnSpeed;
