@@ -76,11 +76,7 @@ public class Player : MonoBehaviour
             myTransform.eulerAngles.y + xDistance,
             myTransform.eulerAngles.z);
 
-        Debug.Log(target);
-
         myTransform.rotation = target;
-
-        Debug.Log(myTransform.rotation);
     }
 
     public float turnSpeed;
