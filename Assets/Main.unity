@@ -229,7 +229,7 @@ Animator:
   m_GameObject: {fileID: 121798888}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7d3425a6c7317e048be11c2ff72db69e, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2873333d39df0a44a9e6b4c0b978f087, type: 2}
   m_CullingMode: 1
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
@@ -2382,6 +2382,7 @@ GameObject:
   - 114: {fileID: 1510525691}
   - 114: {fileID: 1510525693}
   - 143: {fileID: 1510525692}
+  - 95: {fileID: 1510525694}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2435,6 +2436,20 @@ MonoBehaviour:
   cameraPivot: {fileID: 1488887223}
   lookSpeed: 1
   turnSpeed: 1
+--- !u!95 &1510525694
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1510525690}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 7d3425a6c7317e048be11c2ff72db69e, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 1
+  m_HasTransformHierarchy: 1
 --- !u!4 &1510525695
 Transform:
   m_ObjectHideFlags: 0
@@ -2678,6 +2693,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 7d3425a6c7317e048be11c2ff72db69e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2873333d39df0a44a9e6b4c0b978f087, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7d3425a6c7317e048be11c2ff72db69e, type: 3}
   m_RootGameObject: {fileID: 121798888}
