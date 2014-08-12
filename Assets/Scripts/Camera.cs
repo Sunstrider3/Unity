@@ -15,9 +15,15 @@ public class Camera : MonoBehaviour
     {
     }
 
-    void LateUpdate()
+    public void setRotation(Quaternion rotaiton)
     {
         myTransform.rotation = player.rotation;
+
+
+    }
+
+    void LateUpdate()
+    {
         myTransform.position = player.position;
     }
 }

@@ -15,13 +15,15 @@ public class PlayerCharacterController : MonoBehaviour
     public float gravity = 9.81f;
     public CharacterController controller;
     public Transform graphics;
-    public Transform cameraPivot;
+    public Camera cameraclass;
 
     private Transform myTransform;
+    private Animator myAnimator;
 
     void Start ()
     {
         myTransform = this.transform;
+        myAnimator = graphics.GetChild(0).transform.GetComponent<Animator>();
     }
 
     void Update()
@@ -30,6 +32,7 @@ public class PlayerCharacterController : MonoBehaviour
         rotation();
         faceVelocity();
         tiltToAcceleration();
+        handleAnimations();
     }
 
     private Vector3 moveDirection = Vector3.zero;
@@ -77,6 +80,14 @@ public class PlayerCharacterController : MonoBehaviour
             myTransform.eulerAngles.z);
 
         myTransform.rotation = target;
+
+        target = Quaternion.Euler(
+            myTransform.eulerAngles.x + yDistance,
+            myTransform.eulerAngles.y,
+            myTransform.eulerAngles.z);
+
+        cameraclass.setRotation(target);
+
     }
  
     public float turnSpeed;
@@ -104,8 +115,11 @@ public class PlayerCharacterController : MonoBehaviour
           
         Vector3 perp = Vector3.Cross(acceleration, Vector3.up);
 
-        //Debug.Log(perp);
 
         lastVelocity = controller.velocity;
+    }
+
+    private void handleAnimations()
+    {
     }
 }
